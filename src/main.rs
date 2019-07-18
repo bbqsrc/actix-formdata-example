@@ -29,15 +29,8 @@
  
  fn main() -> Result<(), failure::Error> {
      let form = Form::new()
-         .field("Hey", Field::text())
-         .field(
-             "Hi",
-             Field::map()
-                 .field("One", Field::int())
-                 .field("Two", Field::float())
-                 .finalize(),
-         )
-         .field("files", Field::array(Field::file(Gen)));
+         .field("sometext", Field::text())
+         .field("file", Field::file(Gen));
  
      println!("{:?}", form);
  
@@ -51,4 +44,3 @@
  
      Ok(())
  }
- 
